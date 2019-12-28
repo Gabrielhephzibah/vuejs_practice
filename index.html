@@ -1,0 +1,217 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width initial=scale=1.0">	
+	<title>my vue practice</title>
+</head>
+<body>
+	<style>
+		.water:hover{
+			background: blue
+
+		}
+		
+	</style>
+	<div id="app">
+		<p>Title:{{Title}}</p>
+		<p>released:{{ Released}}</p>
+		<p>{{ outPut() }}</p>
+
+
+		<div v-bind:Title="Title" >hover your mouse here</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+ -->
+	<!-- <script>
+		new Vue ({
+			el:'#app',
+			data:{
+				Title:'The Matrix',
+				Released: '1999'
+			
+				oldMovie:'Released > 2000',
+				newMovie:'Released < 2000'
+
+
+			},
+
+		methods:{
+			outPut:function() {
+				if(this.Released < 2000){
+					return " the movie is old"
+				} else{
+					return"the movie is new"
+				}
+
+			
+				
+			}
+		}
+
+
+			});
+		
+	</script>
+
+</body>
+</html>
+ -->
+
+
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 		<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width initial=scale=1.0">	
+ 	<title>event</title>
+ </head>
+ <body>
+ 	<div id="app">
+ 		<input v-on:keyup="upDate" type="text">
+ 		Output:{{output}}
+
+ 		<div>
+ 			<input v-on:keyup.ctrl.enter="upDate" type="text">
+ 			Output:{{output}}
+ 		</div>
+ 		<div>
+ 			<form v-on:submit.prevent>
+ 			<input type="submit" name="submit">
+ 		</form>
+ 		</div>
+ 		
+ 	</div>
+
+
+
+
+
+
+
+
+
+
+ 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+ </body>
+ </html>
+
+<script>
+	new Vue ({
+			el:'#app',
+			data:{
+			 output:""
+
+	
+	},
+
+	methods:{
+		upDate:function(){
+			this.output = event.target.value;
+		}
+	}
+
+});
+
+
+
+
+</script>
+
+  -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 		<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width initial=scale=1.0">	
+ 	<title>data binding</title>
+ </head>
+ <body>
+ 	<div id="app">
+ 		<input v-model='password' type="password" placeholder="enter your name">
+ 		<h1>update password:{{ password }}</h1>
+ 		<div>
+ 			<p v-if='password.length > 8'>Awesome,your password is more than 8 character</p>
+ 			<p v-else-if='password.length > 0'>pls enter a longer password</p>
+ 			<p v-else>pls enter a password</p>
+
+ 		</div>
+ 		<ol>
+ 			<li v-for ="category in categories">
+ 				{{ category.name }}
+ 				<ul>
+ 					<li v-for="sub in category.sub">{{ sub }}</li>
+ 					
+ 					
+ 				</ul>
+ 			</li>
+ 			
+ 		</ol>
+
+
+
+
+
+ 		
+ 		
+ 		
+ 	</div>
+
+
+
+
+
+
+
+
+
+
+ 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+ </body>
+ </html>
+
+<script>
+	new Vue ({
+			el:'#app',
+			data:{
+			password:'',
+			// lengthPass:34,
+			categories:[
+			{name:'Javascript', sub:['Vuejs','React','Angular'] },
+			{name:'Databases', sub:['MySQL','PostgreSQL','MariaDB'] },
+			{name:'Operating systems', sub:['MacOs','linux','windows'] }
+			]
+			
+
+	
+	}
+
+	
+
+});
+
+
+
+
+</script>
+
+
+
+
+
+
